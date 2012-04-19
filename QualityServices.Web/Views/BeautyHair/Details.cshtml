@@ -1,0 +1,36 @@
+﻿@model QualityServices.ViewModels.BeautyHairDetailsViewModel
+
+@using (Ajax.BeginForm("ManageDetail", new { controller = "BeautyHair" },
+    new AjaxOptions()
+    {
+        OnSuccess = "SuccessfulPost",
+        InsertionMode = InsertionMode.Replace,
+        OnBegin = "ShowLoadingPanel",
+        OnComplete = "ShowDialog",
+        UpdateTargetId = "divAddEdit"
+    }))
+{
+    @Html.HiddenFor(model => model.Id)
+    @Html.Partial("ErrorControl", Model)
+    
+    <p>	
+		@Html.LabelFor(model => model.ServiceName)
+		@Html.TextBoxFor(model => model.ServiceName, new { @class = "size-large", @disabled = "true" })&nbsp;&nbsp;
+	</p>
+	
+	
+} 
+
+@using (Ajax.BeginForm("LoadExistingDetail", new { controller = "BeautyHair" }, new AjaxOptions()
+{
+    OnSuccess = "SuccessfulLoad",
+    InsertionMode = InsertionMode.Replace,
+    OnBegin = "ShowLoadingPanel",
+    OnComplete = "ShowDialog",
+    UpdateTargetId = "divAddEdit"
+}))
+{ 
+	 <input type="hidden" id="hdnId" name="id" value="@Guid.Empty" />
+     <input type="submit" value="Refresh" id="btnEdit" class="hidden" />
+}
+

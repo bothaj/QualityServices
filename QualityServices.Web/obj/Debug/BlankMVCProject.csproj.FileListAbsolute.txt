@@ -1,0 +1,5 @@
+C:\Dev2\TwitterBootstrap\andrewtobin-Twitter-Bootstrap-MVC-83476b0\BlankMVCProject\BlankMVCProject\bin\BlankMVCProject.dll
+C:\Dev2\TwitterBootstrap\andrewtobin-Twitter-Bootstrap-MVC-83476b0\BlankMVCProject\BlankMVCProject\bin\BlankMVCProject.pdb
+C:\Dev2\TwitterBootstrap\andrewtobin-Twitter-Bootstrap-MVC-83476b0\BlankMVCProject\BlankMVCProject\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev2\TwitterBootstrap\andrewtobin-Twitter-Bootstrap-MVC-83476b0\BlankMVCProject\BlankMVCProject\obj\Debug\BlankMVCProject.dll
+C:\Dev2\TwitterBootstrap\andrewtobin-Twitter-Bootstrap-MVC-83476b0\BlankMVCProject\BlankMVCProject\obj\Debug\BlankMVCProject.pdb

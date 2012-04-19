@@ -1,0 +1,15 @@
+﻿@model QualityServices.ViewModels.BaseViewModel
+
+@if (Model.HasErrors) {
+       <div class="validation-summary-errors" id='@Model.ValidationServerName'>
+            @foreach (var error in Model.GetErrors()){ 
+                @Html.Encode(error)
+            }
+       </div>
+}
+<div id="Notice" style="padding: 10px; margin: 10px; background-color: #e4efd7; border: 1px solid #75af2d; display: none;">
+    <label id="NoticeMessage"></label>
+</div>
+
+@Html.ValidationSummary("Please complete or correct the fields marked with a *", new { @id = Model.ValidationName })
+

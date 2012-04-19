@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=100">
+
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css"/>
+    <<link href="@Url.Content("~/Content/Stylesheets/jquery-ui-1.8.7.custom.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Stylesheets/Tangent-Uploadify.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Stylesheets/Tangent-Loading.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Stylesheets/Tangent-TimeSelect.css")" rel="stylesheet" type="text/css" />
+
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.7.custom.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/MicrosoftAjax.debug.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/MicrosoftMvcAjax.debug.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/MicrosoftMvcValidation.debug.js")" type="text/javascript"></script>
+    
+    <script src="@Url.Content("~/Scripts/Tangent-Loading.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Tangent-GuiTools.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Tangent-Validation.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/EventManagement-GuiTools.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/EventManagement-Json.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/swfobject.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.uploadify.v2.1.0.js")" type="text/javascript"></script>
+
+    <div id="fb-root"></div>
+    <script>    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));</script>
+
+    <style type="text/css">
+      /* Override some defaults */
+      html, body {
+        background-color: #eee;
+      }
+      body {
+        padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+      }
+      .container > footer p {
+        text-align: center; /* center align it with the container */
+      }
+      .container {
+        width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+      }
+
+      /* The white background content wrapper */
+      .container > .content {
+        background-color: #fff;
+        padding: 20px;
+        margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+        -webkit-border-radius: 0 0 6px 6px;
+           -moz-border-radius: 0 0 6px 6px;
+                border-radius: 0 0 6px 6px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+
+      /* Page header tweaks */
+      .page-header {
+        background-color: #f5f5f5;
+        padding: 20px 20px 10px;
+        margin: -20px -20px 20px;
+      }
+
+      /* Styles you shouldn't keep as they are for displaying this base example only */
+      .content .span10,
+      .content .span4 {
+        min-height: 500px;
+      }
+      /* Give a quick and non-cross-browser friendly divider */
+      .content .span4 {
+        margin-left: 0;
+        padding-left: 19px;
+        border-left: 1px solid #eee;
+      }
+
+      .topbar .btn {
+        border: 0;
+      }
+      
+      a.classname
+{
+    background: url(../Images/image.gif) no-repeat top left;
+     display: block;
+     width: 150px;
+     height: 150px;
+     text-indent: -9999px; /* hides the link text */
+}
+
+.but_add
+{
+    padding-left: 27px;
+    cursor: pointer;
+    display: inline-block;
+    padding-top: 5px;
+    height:100px;
+    width:120px;
+    background-color:#80AF80;
+    font-size: 15px;
+    line-height: normal;
+    padding: 9px 14px 9px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background-size: 35 px;
+    background-image: url('../../Content/images/hair-and-beauty.jpg')); background-repeat: no-repeat;
+}
+
+       </style>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="#">Quality Services</a>
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <form action="" class="pull-right">
+            <input class="input-small" type="text" placeholder="Username">
+            <input class="input-small" type="password" placeholder="Password">
+            <button class="btn" type="submit">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+      <div class="page-header">
+    <h2></h2>
+    <h1>Home <small>@ViewBag.Message</small></h1>
+</div>
+        <div class="row">
+          <div class="span10">
+            @RenderBody()
+            @Html.ActionLink("BeautyHair", "Index", new { controller = "BeautyHair" }, null)
+          </div>
+          <div class="span4">
+          <div class="fb-like" data-href="http://www.facebook.com/groups/213758598663587/" data-send="true" data-layout="box_count" data-width="450" data-show-faces="true" data-action="recommend"></div>
+            @RenderSection("SideBar", false)
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p>&copy; Company 2012</p>
+      </footer>
+
+      </div> <!-- /container -->
+</body>
+</html>

@@ -1,0 +1,7 @@
+C:\Dev2\QualityServices\QualityServices.Models\bin\Debug\QualityServices.Models.dll
+C:\Dev2\QualityServices\QualityServices.Models\bin\Debug\QualityServices.Models.pdb
+C:\Dev2\QualityServices\QualityServices.Models\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev2\QualityServices\QualityServices.Models\obj\Debug\QualityServices.Models.dll
+C:\Dev2\QualityServices\QualityServices.Models\obj\Debug\QualityServices.Models.pdb
+C:\Dev2\QualityServices\QualityServices.Models\bin\Debug\Britehouse.Dal.dll
+C:\Dev2\QualityServices\QualityServices.Models\bin\Debug\Britehouse.Dal.pdb

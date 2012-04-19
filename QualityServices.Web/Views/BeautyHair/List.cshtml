@@ -1,0 +1,60 @@
+﻿@using JBSoft.Web.Helpers;
+@using MvcContrib.UI.Grid;
+@using MvcContrib.UI.Grid.ActionSyntax;
+
+@model QualityServices.ViewModels.BeautyHairListViewModel
+
+<div id="@Model.ReplaceDivName">
+@using (Ajax.BeginForm("RefreshItems", new { controller = "BeautyHair" }, null, new AjaxOptions()
+       {
+           OnSuccess = "SuccessfulSubmit",
+           OnBegin = "ShowLoadingPanel",
+           UpdateTargetId = Model.ReplaceDivName,
+           InsertionMode = InsertionMode.Replace
+       }))
+{
+        @Html.HiddenFor(model => model.Page)
+
+        @Html.Partial("ErrorControl", Model)
+    <p>
+       @Html.LabelFor(model => model.SearchDescription)
+       @Html.TextBoxFor(model => model.SearchDescription, new { @class = "size-large" })
+    </p>
+    <div>
+   
+       <input class="input-big" type="text" placeholder="Search">&nbsp; <button class="btn" type="submit" onclick="javascript:UrlRefreshGrid()">Search</button>
+       <input type="button" value="Clear Criteria" class="normal" style="float:none" onclick="javascript:ClearAll()" />
+    </div>
+    <br />
+    <br />
+
+<div class="pageDetails">
+<table class="grid">
+<tr class="header">
+<th class="header">Category</th>
+<th class="header">Name</th>
+<th class="header"></th>
+
+</tr>
+
+
+@if (Model.NonpagedList != null && Model.NonpagedList.Count != 0)
+{
+    foreach (var listItem in Model.NonpagedList)
+    {
+        <tr>
+        
+        <td width="20%">@listItem.CategoryName</td>
+        <td width="20%">@listItem.ServiceName</td>
+        <td width="5%"><button class="gridButton" id="View" name="View" onclick = "javascript:GetDetail('@listItem.Id.ToString().Replace("_", "-")');" title="Edit" type="button"><img alt="Edit" src="@Url.Content("~/Content/Icons/view.png")" /> </button></td>
+        
+        
+        </tr>
+      
+    }//end of for
+}
+</table>
+
+</div>
+}
+</div>

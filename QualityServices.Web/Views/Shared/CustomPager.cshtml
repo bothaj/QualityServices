@@ -1,0 +1,65 @@
+﻿@model JBSoft.Web.ViewModels.IJBSoftListBaseViewModel
+@using MvcContrib.UI.Pager;           
+
+@{
+    var showingText = (((Model.PageNumber - 1) * Model.PageSize) + 1).ToString();
+
+    if (Model.TotalItems < (Model.PageNumber * Model.PageSize))
+    {
+        showingText = showingText + " - " + Model.TotalItems.ToString();
+    }
+    else
+    {
+        showingText = showingText + " - " + (Model.PageNumber * Model.PageSize).ToString();
+    }
+}
+<p/>
+  @if (Model.TotalPages == 1)
+  {
+      <span>Showing 1 - 1</span>
+  }
+  else if (Model.TotalPages > 1)
+  {
+      <span>Showing @string.Concat(showingText, " of ", Model.TotalItems.ToString())</span>
+      <a href="javascript:NavigateToPage(1, @Model.ReplaceDivName);">First</a>
+      if (Model.HasPreviousPage)
+      {
+        <a href="javascript:NavigateToPage(@Model.PageNumber - 1, @Model.ReplaceDivName);"> | Previous</a>
+      }
+      else
+      {
+           <span> | Previous</span>
+      }
+      if (Model.HasNextPage)
+      {
+        <a href="javascript:NavigateToPage(@Model.PageNumber + 1, @Model.ReplaceDivName);"> | Next</a>
+      }
+      else
+      {
+           <span> | Next</span>
+      }
+      <a href="javascript:NavigateToPage(@Model.TotalPages, @Model.ReplaceDivName);"> | Last</a>
+  }
+<p/>
+
+<script type="text/javascript">
+
+    function NavigateToPage(pageNo) {
+        ShowLoadingPanel();
+        $('#Page').val(pageNo);
+        UrlRefreshGrid();
+        HideLoadingPanel();
+    }
+
+    function NavigateToPage(pageNo, replaceDivName) {
+        ShowLoadingPanel();
+        $('#Page').val(pageNo);
+        $('#ReplaceDivName').val(replaceDivName);
+        UrlRefreshGrid();
+        //UrlAttendeeRefreshGrid();
+        HideLoadingPanel();
+    }
+
+
+
+</script>

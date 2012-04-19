@@ -1,0 +1,14 @@
+C:\Dev2\QualityServices\QualityService.Bll\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev2\QualityServices\QualityService.Bll\bin\Debug\QualityService.Bll.dll
+C:\Dev2\QualityServices\QualityService.Bll\bin\Debug\QualityService.Bll.pdb
+C:\Dev2\QualityServices\QualityService.Bll\bin\Debug\Britehouse.Dal.dll
+C:\Dev2\QualityServices\QualityService.Bll\bin\Debug\QualityServices.Dal.dll
+C:\Dev2\QualityServices\QualityService.Bll\bin\Debug\QualityServices.Models.dll
+C:\Dev2\QualityServices\QualityService.Bll\bin\Debug\Tangent.Logging.dll
+C:\Dev2\QualityServices\QualityService.Bll\bin\Debug\NLog.dll
+C:\Dev2\QualityServices\QualityService.Bll\bin\Debug\Britehouse.Dal.pdb
+C:\Dev2\QualityServices\QualityService.Bll\bin\Debug\Tangent.Logging.pdb
+C:\Dev2\QualityServices\QualityService.Bll\bin\Debug\QualityServices.Dal.pdb
+C:\Dev2\QualityServices\QualityService.Bll\bin\Debug\QualityServices.Models.pdb
+C:\Dev2\QualityServices\QualityService.Bll\obj\Debug\QualityService.Bll.dll
+C:\Dev2\QualityServices\QualityService.Bll\obj\Debug\QualityService.Bll.pdb

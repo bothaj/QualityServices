@@ -1,0 +1,5 @@
+C:\Dev2\QualityServices\QualityServices.Dal\bin\Debug\QualityServices.Dal.dll
+C:\Dev2\QualityServices\QualityServices.Dal\bin\Debug\QualityServices.Dal.pdb
+C:\Dev2\QualityServices\QualityServices.Dal\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev2\QualityServices\QualityServices.Dal\obj\Debug\QualityServices.Dal.dll
+C:\Dev2\QualityServices\QualityServices.Dal\obj\Debug\QualityServices.Dal.pdb

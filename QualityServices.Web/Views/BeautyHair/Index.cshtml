@@ -1,0 +1,135 @@
+﻿@model QualityServices.ViewModels.ManageBeautyHairViewModel
+@using JBSoft.Web.Helpers;
+
+@{
+    Page.Title = "Manage Assets";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section SideBar {
+    
+}
+
+<h2>Beauty & Hair</h2>
+
+<script type="text/javascript">
+
+    $.ajaxSetup({
+        cache: false
+    }); 
+        
+</script>
+
+
+@Html.Partial("ErrorControl", Model)
+
+<div id="dlgConfirm" title="Delete" class="dialog">
+    Are you sure you want to delete (<span id="spName"></span>)?<br />
+</div> 
+
+<div class="gridlist">
+    @Html.Partial("List", Model.ListViewModel)
+</div>
+    
+<div id="dlgAddEdit" title="Service Details" class="dialog">
+    <div id="divAddEdit">
+        @Html.Partial("Details", Model.DetailsViewModel)
+	</div>
+</div> 
+
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Scripts" runat="server">
+	<script type="text/javascript">
+
+	    function DoConfirmation() {
+	        urlAction = '@Url.Action("RemoveItem", new { id = "VAL1" })';
+	        urlAction = urlAction.replace('VAL1', id);
+
+	        DoConfirmationPost(urlAction, "Asset successfully deleted");
+	    }
+
+
+	    function UrlRefreshGrid() {
+	        urlAction = '@Url.Action("RefreshItems", new { controller = "BeautyHair" })';
+	        var added = '?';
+
+
+
+	        urlAction = urlAction + added + 'Page=' + $('#Page').val();
+	        RefreshGrid(urlAction, "@Model.ListViewModel.ReplaceDivName");
+	    }
+
+	    function RefreshGrid(urlAction, gridName) {
+	        $.ajax({
+	            type: 'POST',
+	            url: urlAction,
+	            data: '',
+	            success: function (data, textStatus, XMLHttpRequest) {
+	                if (data.HasErrors == false) {
+	                    $("#" + gridName).replaceWith(data.Html);
+	                    DoLoadAjax();
+	                }
+	            }
+	        });
+	    }
+
+	    function ClearAll() {
+
+	        $('#Page').val('');
+	        UrlRefreshGrid();
+	    }
+
+	    $(document).ready(function () {
+	        LoadDialogBoxes(800, 450);
+	        LoadAjax();
+	    });
+
+	    function Fail() {
+	        alert("breaking");
+	    }
+
+	    function SuccessfulPost(ajaxContext) {
+	        Sys.Mvc.FormContext.OnSuccessEnableClientValidation(ajaxContext);
+
+	        //        if ($('#@Model.DetailsViewModel.ValidationName').attr("class") != "validation-summary-errors" &&
+	        //				$('#@Model.DetailsViewModel.ValidationServerName').attr("class") != "validation-summary-errors") {
+	        //            RefreshAndCloseDialog('@Url.Action("RefreshItems", new { controller = "BeautyHair" })');
+	        //            ShowSuccessfulMessage("The scanned asset has been successfully saved.");
+	        //        }
+	        LoadAjax();
+	    }
+
+	    function SuccessfulSubmit(ajaxContext) {
+	        Sys.Mvc.FormContext.OnSuccessEnableClientValidation(ajaxContext);
+
+	                if ($('#@Model.DetailsViewModel.ValidationName').attr("class") != "validation-summary-errors" &&
+	        				$('#@Model.DetailsViewModel.ValidationServerName').attr("class") != "validation-summary-errors") {
+	                    RefreshAndCloseDialog('@Url.Action("RefreshItems", new { controller = "BeautyHair" })');
+	                    ShowErrorMessage("Scans successfully posted to SAP");
+	                }
+	        //UrlRefreshGrid();
+	        LoadAjax();
+	    }
+
+
+
+	    function SuccessfulLoad(ajaxContext) {
+	        Sys.Mvc.FormContext.OnSuccessEnableClientValidation(ajaxContext);
+	        LoadAjax();
+	    }
+
+	    function DoLoadAjax() {
+	        LoadAjax();
+	    }
+
+	    function LoadAjax() {
+
+
+
+	    }
+
+
+
+	</script>
+</asp:Content>
+
