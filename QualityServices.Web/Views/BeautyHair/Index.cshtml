@@ -89,6 +89,7 @@
 	    }
 
 	    function SuccessfulPost(ajaxContext) {
+        alert('yes4');
 	        Sys.Mvc.FormContext.OnSuccessEnableClientValidation(ajaxContext);
 
 	        //        if ($('#@Model.DetailsViewModel.ValidationName').attr("class") != "validation-summary-errors" &&
@@ -100,6 +101,7 @@
 	    }
 
 	    function SuccessfulSubmit(ajaxContext) {
+        alert('yes3');
 	        Sys.Mvc.FormContext.OnSuccessEnableClientValidation(ajaxContext);
 
 	                if ($('#@Model.DetailsViewModel.ValidationName').attr("class") != "validation-summary-errors" &&
@@ -114,12 +116,22 @@
 
 
 	    function SuccessfulLoad(ajaxContext) {
+        alert('yes');
 	        Sys.Mvc.FormContext.OnSuccessEnableClientValidation(ajaxContext);
 	        LoadAjax();
 	    }
 
 	    function DoLoadAjax() {
 	        LoadAjax();
+	    }
+
+	    function LoadDialogBoxes(editWidth, confirmWidth) {
+	        $('#dlgAddEdit').dialog({
+	            autoOpen: false,
+	            width: editWidth,
+	            modal: true,
+	            resizable: false
+	        });
 	    }
 
 	    function LoadAjax() {

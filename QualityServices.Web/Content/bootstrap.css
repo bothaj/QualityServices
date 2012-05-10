@@ -2503,3 +2503,60 @@ table.grid2 tfoot a{width:10px; height:10px; background-color:#ccc; color:#fff; 
 .successful-message{padding: 10px; margin: 10px; background-color: #e4efd7; border: 1px solid #75af2d; display: none;}
 .error-message{padding: 10px; margin: 10px; background-color:#ffebe8; border:1px solid #dd3c10; display: none;}
 
+
+#boxbeautyhair
+{
+    display: inline-block;
+    margin: 150px auto;
+    color:#ffffff;
+    -webkit-border-radius:10px;
+    -webkit-box-shadow: rgb(110, 110, 110) 3px 3px 3px;
+    opacity:0.6;
+    background:-webkit-linear-gradient(top, red, white);
+    background-image::url(../../Content/images/hair-and-beauty3.jpg);
+    width:120px;
+    height:75px;
+    text-align:center;    
+    -webkit-transition:-webkit-transform 1s, opacity 1s, background 1s, width 1s, height 1s;
+}
+
+#boxbeautyhair:hover
+{
+     -webkit-transform: rotate(360deg);
+     opacity: 1;
+     background:#1ec7e6;
+     width:150px;
+     height:110px;   
+}
+
+
+#boxtext
+{
+    font: bold 30px Century Gothic;
+    text-shadow: rgb(110, 110, 110) 3px 3x 5px;
+}
+
+#boxhandyman
+{
+    display: inline-block;
+    margin: 150px auto;
+    color:#ffffff;
+    -webkit-border-radius:10px;
+    -webkit-box-shadow: rgb(110, 110, 110) 3px 3px 3px;
+    opacity:0.6;
+    background:-webkit-linear-gradient(top, orange, white);
+    width:120px;
+    height:75px;
+    text-align:center;    
+    -webkit-transition:-webkit-transform 1s, opacity 1s, background 1s, width 1s, height 1s;
+}
+
+#boxhandyman:hover
+{
+     -webkit-transform: rotate(360deg);
+     opacity: 1;
+     background:#1ec7e6;
+     width:250px;
+     height:110px;   
+}
+

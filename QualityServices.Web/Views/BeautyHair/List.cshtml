@@ -8,31 +8,28 @@
 @using (Ajax.BeginForm("RefreshItems", new { controller = "BeautyHair" }, null, new AjaxOptions()
        {
            OnSuccess = "SuccessfulSubmit",
-           OnBegin = "ShowLoadingPanel",
            UpdateTargetId = Model.ReplaceDivName,
            InsertionMode = InsertionMode.Replace
        }))
 {
         @Html.HiddenFor(model => model.Page)
-
-        @Html.Partial("ErrorControl", Model)
-    <p>
-       @Html.LabelFor(model => model.SearchDescription)
-       @Html.TextBoxFor(model => model.SearchDescription, new { @class = "size-large" })
-    </p>
+    
     <div>
    
-       <input class="input-big" type="text" placeholder="Search">&nbsp; <button class="btn" type="submit" onclick="javascript:UrlRefreshGrid()">Search</button>
+       <input class="input-big" type="text" placeholder="Search">&nbsp; <button class="btn" type="button" onclick="javascript:UrlRefreshGrid()">Search</button>
        <input type="button" value="Clear Criteria" class="normal" style="float:none" onclick="javascript:ClearAll()" />
     </div>
-    <br />
     <br />
 
 <div class="pageDetails">
 <table class="grid">
 <tr class="header">
-<th class="header">Category</th>
 <th class="header">Name</th>
+<th class="header">Classification</th>
+<th class="header">Location</th>
+<th class="header">Contact</th>
+<th class="header">Rating</th>
+
 <th class="header"></th>
 
 </tr>
@@ -44,9 +41,12 @@
     {
         <tr>
         
-        <td width="20%">@listItem.CategoryName</td>
         <td width="20%">@listItem.ServiceName</td>
-        <td width="5%"><button class="gridButton" id="View" name="View" onclick = "javascript:GetDetail('@listItem.Id.ToString().Replace("_", "-")');" title="Edit" type="button"><img alt="Edit" src="@Url.Content("~/Content/Icons/view.png")" /> </button></td>
+        <td width="20%"></td>
+        <td width="20%"></td>
+        <td width="20%"></td>
+        <td width="20%"></td>
+        <td width="5%"><button class="gridButton" id="Edit" name="Edit" onclick = "javascript:GetDetail('@listItem.Id.ToString().Replace("_", "-")');" title="View" type="button"><img alt="View" src="@Url.Content("~/Content/Icons/view.png")" /> </button></td>
         
         
         </tr>

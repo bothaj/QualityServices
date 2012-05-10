@@ -4,6 +4,7 @@
     new AjaxOptions()
     {
         OnSuccess = "SuccessfulPost",
+        OnFailure = "SuccessfulPost",
         InsertionMode = InsertionMode.Replace,
         OnBegin = "ShowLoadingPanel",
         OnComplete = "ShowDialog",
@@ -24,6 +25,7 @@
 @using (Ajax.BeginForm("LoadExistingDetail", new { controller = "BeautyHair" }, new AjaxOptions()
 {
     OnSuccess = "SuccessfulLoad",
+    OnFailure = "SuccessfulLoad",
     InsertionMode = InsertionMode.Replace,
     OnBegin = "ShowLoadingPanel",
     OnComplete = "ShowDialog",

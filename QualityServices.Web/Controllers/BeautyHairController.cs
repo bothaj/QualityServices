@@ -56,8 +56,6 @@ namespace QualityServices.Controllers
             //    barcode = viewModel.SearchBarCode;
             //}
 
-
-
             var items = serviceBll.SelectAll(null, null, (int?)ActiveStatus.Active);
             if (items.Count > 0)
                 viewModel.TotalItems = items[0].RowCount;
@@ -105,7 +103,7 @@ namespace QualityServices.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public JsonResult LoadExistingDetail(Guid id)
+        public PartialViewResult LoadExistingDetail(Guid id)
         {
             var viewModel = new BeautyHairDetailsViewModel();
             ServiceBll serviceBll = new ServiceBll();
@@ -146,15 +144,15 @@ namespace QualityServices.Controllers
                 //this.LoadStocktakeIntoViewData(null, "StocktakeId", false);
             }
 
-            var jsonViewModel = new JsonViewModel();
+            //var jsonViewModel = new JsonViewModel();
 
-            jsonViewModel.Html = base.RenderPartialViewToString("Details", viewModel);
-            jsonViewModel.HasErrors = false;
-            jsonViewModel.IsValid = true;
+            //jsonViewModel.Html = base.RenderPartialViewToString("Details", viewModel);
+            //jsonViewModel.HasErrors = false;
+            //jsonViewModel.IsValid = true;
 
-            return Json(jsonViewModel);
+            //return Json(jsonViewModel);
 
-            //return PartialView("Details", viewModel);
+            return PartialView("Details", viewModel);
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
